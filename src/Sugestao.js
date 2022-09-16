@@ -1,18 +1,18 @@
 export default function Sugestao(props){
     return(
-        <div class="sugestao">
-        <div class="usuario">
+        <div className="sugestao">
+        <div className="usuario">
           <img
             src={`assets/img/${props.usuario}.svg`}
             alt="Não foi possível carregar a imagem"
           />
-          <div class="texto">
-            <div class="nome">{props.usuario}</div>
-            <div class="razao">{props.razao}</div>
+          <div className="texto">
+            <div className="nome">{props.usuario}</div>
+            <div className="razao">{props.razao}</div>
           </div>
         </div>
 
-        <div class="seguir">Seguir</div>
+        <div className="seguir">Seguir</div>
       </div>
     );
 }

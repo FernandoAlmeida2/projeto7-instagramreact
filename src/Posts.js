@@ -17,7 +17,7 @@ export default function Posts() {
   });
 
   return (
-    <div class="posts">
+    <div className="posts">
       {postsLista.map((post) => (
         <Post
           usuario={post.usuario}

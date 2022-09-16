@@ -10,8 +10,8 @@ export default function Sugestoes() {
   sugestoesLista.push({ usuario: "adorable_animals", razao: "Segue você" });
   sugestoesLista.push({ usuario: "smallcutecats", razao: "Segue você" });
   return (
-    <div class="sugestoes">
-      <div class="titulo">
+    <div className="sugestoes">
+      <div className="titulo">
         Sugestões para você
         <div>Ver tudo</div>
       </div>
