@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Post(props) {
   const [iconeSalvar, salvarPost] = useState("bookmark-outline");
-  const [iconeCurtir, curtirPost] = useState("heart-outline");
+  const [iconeCurtir, avaliaCurtir] = useState("heart-outline");
   const [corIconeCurtir, coloreCurtir] = useState("#262626");
   const [numCurtidas, alteraCurtidas] = useState(props.curtidas);
+
+  function curtirPost(tipoCurtida) {
+    if (iconeCurtir === "heart-outline") {
+      avaliaCurtir("heart");
+      coloreCurtir("#ED4956");
+      alteraCurtidas(numCurtidas + 1);
+    } else if (tipoCurtida === true) {
+      avaliaCurtir("heart-outline");
+      coloreCurtir("#262626");
+      alteraCurtidas(numCurtidas - 1);
+    }
+  }
 
   return (
     <div className="post">
@@ -23,6 +35,9 @@ export default function Post(props) {
 
       <div className="conteudo">
         <img
+          onClick={() => {
+            curtirPost(false);
+          }}
           src={`assets/img/${props.conteudo}.svg`}
           alt="Não foi possível carregar a imagem"
         />
@@ -33,18 +48,9 @@ export default function Post(props) {
           <div>
             <ion-icon
               name={iconeCurtir}
-              style={{color:corIconeCurtir}}
+              style={{ color: corIconeCurtir }}
               onClick={() => {
-                if (iconeCurtir === "heart-outline") {
-                  curtirPost("heart");
-                  coloreCurtir("#ED4956");
-                  alteraCurtidas(numCurtidas + 1);
-            
-                } else{
-                  curtirPost("heart-outline");
-                  coloreCurtir("#262626");
-                  alteraCurtidas(numCurtidas - 1);
-                }
+                curtirPost(true);
               }}
             ></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
