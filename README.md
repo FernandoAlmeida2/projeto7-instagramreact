@@ -7,6 +7,6 @@ This project is a much simpler version of Instagram, using **React**. It's a pro
 
 
 
-## Project Basic Structure`
+## Project Basic Structure
 
 <img align="left" width="50%" src="./public/assets/img/ProjetoInstagram.drawio.png" alt="My project structure">  
